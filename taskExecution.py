@@ -1,18 +1,29 @@
 import sys
-from time import sleep
-
 from takeCommand import takeCommand
 import time_module
 from speak import speak
-import _thread
+
+import json
+
+with open('jarvis.json') as f:
+    data = json.load(f)
+
+
+def commandFounder(command):
+    for a in data["intents"]:
+        for b in a["pattern"]:
+            if command == b:
+                result = str(a['answer'])[1:-1]
+                return result
 
 
 def taskExecution():
-
     while True:
         command = takeCommand()
 
-        if 'what is time' in command:
+        founder = commandFounder(command)
+
+        if 'what is time' in founder:
             speak(f'Time is{time_module.getTime()}')
 
         elif 'sleep jarvis' in command:

@@ -1,0 +1,8 @@
+{
+  "intents": [
+    {
+      "pattern": ["What is time", "tell me time"],
+      "answer": ["what is time"]
+    }
+  ]
+}

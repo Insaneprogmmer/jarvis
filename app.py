@@ -5,7 +5,7 @@ from time_module import wishMe
 from speak import speak
 
 if __name__ == '__main__':
-    wishMe()
+    # wishMe()
     while True:
 
         taskExecution()

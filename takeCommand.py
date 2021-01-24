@@ -1,6 +1,7 @@
 import speech_recognition as sr
 from time import sleep
 
+
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -10,6 +11,7 @@ def takeCommand():
         audio = r.listen(source)
 
     try:
+        print("Recognition....")
         query = r.recognize_google(audio, language='en-in')
 
     except Exception as e:
